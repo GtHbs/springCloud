@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 2.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="payment.repository.PaymentRepository">
+    <insert id="create" parameterType="com.springcloud.entities.Payment" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into payment(serial) values (#{serial});
+    </insert>
+
+    <resultMap id="payment" type="com.springcloud.entities.Payment">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="serial" column="serial" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getPaymentById" parameterType="long" resultMap="payment">
+        select id,serial from payment where id = #{id}
+    </select>
+</mapper>

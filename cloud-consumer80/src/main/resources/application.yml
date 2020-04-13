@@ -1,0 +1,16 @@
+server:
+  port: 80
+eureka:
+  instance:
+    instance-id: consumer80
+    prefer-ip-address: true
+  client:
+    #将自己注册到注册中心
+    register-with-eureka: true
+    #去注册中心获取其他服务地址
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+spring:
+  application:
+    name: cloud-consumer-service-80
