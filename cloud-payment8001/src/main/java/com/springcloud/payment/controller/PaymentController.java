@@ -75,4 +75,15 @@ public class PaymentController {
     public String getServerPort() {
         return serverPort;
     }
+
+
+    @GetMapping("/payment/feign/delay")
+    public String paymentFeignDelay() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
 }

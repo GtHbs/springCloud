@@ -24,4 +24,10 @@ public class OrderFeignController {
         CommonResult<Payment> result = paymentFeignService.getPaymentById(id);
         return result;
     }
+
+    @GetMapping("/consumer/feign/delay")
+    public String paymentFeignDelay() {
+        String result = paymentFeignService.paymentFeignDelay();
+        return result;
+    }
 }
