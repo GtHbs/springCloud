@@ -4,6 +4,7 @@ import com.cloud.hystrix.service.HystrixService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -31,5 +32,12 @@ public class HystrixController {
     public String hystrixPaymentInfoTimeout(@PathVariable("id") Long id) {
         String timeout = service.getPaymentInfoTimeout(id);
         return timeout + ":" + port;
+    }
+
+
+    @RequestMapping("/payment/hystrix/breaker/{id}")
+    public String hystrixPaymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String s = service.paymentCircuitBreaker(id);
+        return s;
     }
 }
