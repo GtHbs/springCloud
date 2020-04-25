@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-provider-payment-service
+    name: cloud-provider-payment-service8001
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
