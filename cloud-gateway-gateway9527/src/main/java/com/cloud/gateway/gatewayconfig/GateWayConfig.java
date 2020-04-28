@@ -5,6 +5,8 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.ZonedDateTime;
+
 /**
  * 手动配置路由规则
  *
@@ -21,5 +23,6 @@ public class GateWayConfig {
         routes.route("config_guoji", r -> r.path("/guoji").uri("http://news.baidu.com/guoji")).build();
         return routes.build();
     }
+
 
 }

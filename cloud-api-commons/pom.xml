@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cloud-api-commons</artifactId>
+    <!--所有模块的通用组件-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,5 +29,4 @@
             <version>5.1.0</version>
         </dependency>
     </dependencies>
-
 </project>

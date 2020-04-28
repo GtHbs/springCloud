@@ -8,10 +8,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <!--注册中心-->
     <artifactId>cloud-erueka-server7001</artifactId>
-
     <dependencies>
+        <!--注册中心一定要引入服务端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>

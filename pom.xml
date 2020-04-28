@@ -8,6 +8,7 @@
     <artifactId>springCloud</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <!--该组下的多个模块-->
     <modules>
         <module>cloud-payment8001</module>
         <module>cloud-consumer80</module>
@@ -39,8 +40,9 @@
     <!--
         dependencyManagement和dependency区别
         dependencyManagement:
-                        通常在一个组织或者项目的最顶层的父pom中存在,能让所有在子项目中引用一个依赖而不显式列出版本号
-                    该声明不引入jar包,只有子类引入才会引进jar包
+            通常在一个组织或者项目的最顶层的父pom中存在,
+            能让所有在子项目中引用一个依赖而不显式列出版本号
+            该声明不引入jar包,只有子类引入才会引进jar包
     -->
     <dependencyManagement>
         <dependencies>

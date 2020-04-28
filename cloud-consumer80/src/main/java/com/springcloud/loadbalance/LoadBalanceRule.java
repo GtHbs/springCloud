@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 负载均衡类不能与主启动类放在同一个目录下
+ *
  * @author: 李昭
  * @Date: 2020/4/4 19:57
  */
