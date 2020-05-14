@@ -1,0 +1,15 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.101:8848   #做注册中心
+      config:
+        server-addr: 192.168.0.101:8848   #做配置中心
+        group: ONLINE_GROUP
+        file-extension: properties
+# ${spring.application.name}-${spring.profiles.active}-${spring.cloud.config.file-extension}
