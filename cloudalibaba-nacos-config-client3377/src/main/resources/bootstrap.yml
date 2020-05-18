@@ -10,6 +10,8 @@ spring:
         server-addr: 192.168.0.101:8848   #做注册中心
       config:
         server-addr: 192.168.0.101:8848   #做配置中心
-        group: ONLINE_GROUP
-        file-extension: properties
+        group: DEV_GROUP
+        file-extension: yaml
+        #此处的命名空间一定要写id不能写名字
+        namespace: 23864326-5014-4300-882e-bfda7e449731
 # ${spring.application.name}-${spring.profiles.active}-${spring.cloud.config.file-extension}
