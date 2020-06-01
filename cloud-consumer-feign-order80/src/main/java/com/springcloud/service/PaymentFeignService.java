@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date: 2020/4/8 20:48
  */
 @Component
-@FeignClient("cloud-provider-payment-service")
+@FeignClient(value = "cloud-provider-payment-service",fallback = String.class)
 public interface PaymentFeignService {
     @GetMapping(value = "/payment/get/{id}")
     CommonResult<Payment> getPaymentById(@PathVariable("id")Long id);

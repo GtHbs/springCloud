@@ -11,4 +11,4 @@ ribbon:
   ConnectTimeout: 5000
 logging:
   level:
-    ccom.springcloud.service.PaymentFeignService: debug
+    com.springcloud.service.PaymentFeignService: debug

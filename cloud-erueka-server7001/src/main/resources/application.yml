@@ -9,4 +9,4 @@ eureka:
     #去注册中心获取其他服务的地址
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka7001:7001/eureka/   #将自己注册到自己的服务中,也可以注册到其他服务
+      defaultZone: http://eureka7002:7002/eureka/   #将自己注册到自己的其他服务中,也可以注册到自己服务

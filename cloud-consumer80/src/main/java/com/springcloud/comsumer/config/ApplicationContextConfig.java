@@ -1,5 +1,6 @@
 package com.springcloud.comsumer.config;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -25,7 +26,7 @@ public class ApplicationContextConfig {
      *      (6) AvailabilityFilterlingRule:先过滤掉故障实例,再选择并发量小的实例
      *      (7) ZoneAvoidanceRule:默认规则,符合判断server所在区域的性能和server的可用性选择服务器
      */
-//    @LoadBalanced
+    @LoadBalanced
     @Bean
     public RestTemplate getRestTemplate() {
         return new RestTemplate();

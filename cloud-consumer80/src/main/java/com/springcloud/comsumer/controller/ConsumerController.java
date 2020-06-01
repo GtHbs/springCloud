@@ -45,8 +45,14 @@ public class ConsumerController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+
+    /**
+     * 远程调用接口
+     * @return
+     */
     @GetMapping("/consumer/payment/lb")
     public String getPaymentLoadBalance() {
+        //获取注册服务
         List<ServiceInstance> instances = discoveryClient.getInstances("cloud-provider-payment-service");
         if(Objects.isNull(instances) || instances.size() <= 0) {
             return null;

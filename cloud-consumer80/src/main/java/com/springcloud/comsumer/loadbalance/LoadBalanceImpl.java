@@ -21,6 +21,7 @@ public class LoadBalanceImpl implements LoadBalancer {
 
     @Override
     public ServiceInstance instance(List<ServiceInstance> instances) {
+        //获取当前服务器地址下标(取余)
         int index = getAndIncrement() % instances.size();
         return instances.get(index);
     }
@@ -34,7 +35,6 @@ public class LoadBalanceImpl implements LoadBalancer {
             current = this.atomicInteger.get();
             next = current >= Integer.MAX_VALUE ? 0 : current + 1;
         } while (!atomicInteger.compareAndSet(current,next));
-        System.out.println("-------------"+next+"------------");
         return next;
     }
 }

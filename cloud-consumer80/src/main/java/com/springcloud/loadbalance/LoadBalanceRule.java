@@ -16,8 +16,6 @@ public class LoadBalanceRule {
 
     /**
      * 定义为随机访问规则
-     *
-     * @return
      */
     @Bean
     public IRule randomRule() {
