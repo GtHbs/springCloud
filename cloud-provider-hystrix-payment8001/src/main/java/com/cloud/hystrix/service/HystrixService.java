@@ -55,11 +55,23 @@ public class HystrixService {
     @HystrixCommand(fallbackMethod = "paymentCircuit_fallback", commandProperties = {
             //开启断路器
             @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
-            //出发熔断的最小次数
+            /*
+             * 触发熔断的最小次数(默认为20)
+             * 只有在一段时间内请求次数达到20才会进行错误比例计算
+             */
             @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
-            //时间窗口期(范围),熔断10秒后尝试去请求
+            /*
+             * 时间窗口期(范围),熔断10秒后尝试去请求
+             * 默认为5秒，当熔断器打开后5秒后就会尝试放入一部分流量进行试探。确定依赖的服务是否恢复。
+             *
+             */
             @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
-            //失败率达到60%(上面配置的10次)后就跳闸
+
+            /*
+             * 失败率达到60%(上面配置的10次)后就跳闸
+             * 错误率：默认为50%
+             * 只要在某段时间内或者达到固定次数的比例时，就会触发熔断
+             */
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
     })
     public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
