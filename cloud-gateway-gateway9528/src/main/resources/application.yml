@@ -1,0 +1,13 @@
+server:
+  port: 9528
+spring:
+  application:
+    name: gateway9528
+  cloud:
+    gateway:
+      routes:
+        - id: gateway-service
+          uri: https://www.baidu.com
+          predicates:
+#            - Path=/monitor/**
+            - Cookie=sessionId, test
