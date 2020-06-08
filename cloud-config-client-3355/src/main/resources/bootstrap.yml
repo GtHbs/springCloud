@@ -7,8 +7,11 @@ spring:
     config:
       label: master
       name: config
-      profile: dev
-      uri: http://localhost:3344
+      profile: pro
+      discovery:
+        enabled: true
+        service-id: cloud-config-center #获取配置中心服务id
+      uri: http://192.168.0.102:3344
 eureka:
   client:
     service-url:
